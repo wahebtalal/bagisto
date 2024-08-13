@@ -142,9 +142,9 @@ class Core
         }
 
         $this->currentChannel = $this->channelRepository->findWhereIn('hostname', [
-            '"'.$hostname.'"',
-            '"'.'http://'.$hostname.'"',
-            '"'.'https://'.$hostname.'"',
+            $hostname,
+            'http://'.$hostname,
+            'https://'.$hostname,
         ])->first();
 
         if (! $this->currentChannel) {
