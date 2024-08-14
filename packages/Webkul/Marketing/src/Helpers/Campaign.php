@@ -47,7 +47,7 @@ class Campaign
             }
 
             foreach ($emails as $email) {
-                Mail::to($email)->queue(new NewsletterMail($email, $campaign));
+                Mail::queue(new NewsletterMail($email, $campaign));
             }
         }
     }
