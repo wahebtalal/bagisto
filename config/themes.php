@@ -24,6 +24,17 @@ return [
                 'package_assets_directory' => 'src/Resources/assets',
             ],
         ],
+        'Encodex' => [
+            'name'        => 'Encodex',
+            'assets_path' => 'public/themes/shop/store',
+            'views_path'  => 'resources/themes/Encodex/views',
+
+            'vite'        => [
+                'hot_file'                 => 'Encodex-vite.hot',
+                'build_directory'          => 'themes/shop/Encodex/build',
+                'package_assets_directory' => 'src/Resources/assets',
+            ],
+        ],
     ],
 
     /*
