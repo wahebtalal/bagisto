@@ -38,7 +38,7 @@
 
         <!-- Form Container -->
         <div class="m-auto w-full max-w-[870px] rounded-xl border border-zinc-200 p-16 px-[90px] max-md:px-8 max-md:py-8 max-sm:border-none max-sm:p-0 sm:shadow-2xl sm:hover:shadow-gray-500 sm:transition sm:hover:scale-[1.005] sm:duration-300 ">
-            <h1 class="font-dmserif text-4xl max-md:text-3xl max-sm:text-xl">
+            <h1 class="font-dmserif text-4xl max-md:text-3xl max-sm:text-xl text-navyBlue">
                 @lang('shop::app.customers.login-form.page-title')
             </h1>
 
