@@ -28,6 +28,11 @@ return [
             'build_directory'          => 'themes/shop/Encodex/build',
             'package_assets_directory' => 'src/Resources/assets',
         ],
+        'Encodex_shop' => [
+            'hot_file'                 => 'Encodex_shop-vite.hot',
+            'build_directory'          => 'themes/Encodex_shop/build',
+            'package_assets_directory' => 'src/Resources/assets',
+        ],
 
         'installer' => [
             'hot_file'                 => 'installer-default-vite.hot',
