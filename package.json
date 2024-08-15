@@ -2,7 +2,8 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "Encodex": "packages/Webkul/Store/npm run build"
     },
     "devDependencies": {
         "axios": "^1.6.4",

@@ -23,6 +23,12 @@ return [
             'package_assets_directory' => 'src/Resources/assets',
         ],
 
+        'Encodex' => [
+            'hot_file'                 => 'Encodex-vite.hot',
+            'build_directory'          => 'themes/shop/Encodex/build',
+            'package_assets_directory' => 'src/Resources/assets',
+        ],
+
         'installer' => [
             'hot_file'                 => 'installer-default-vite.hot',
             'build_directory'          => 'themes/installer/default/build',

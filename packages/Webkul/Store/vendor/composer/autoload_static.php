@@ -9,12 +9,12 @@ class ComposerStaticInit9c3ba288a52448f6f5b9c278bb7c6212
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
-            'Webkul\\Shop\\' => 12,
+            'Webkul\\Store\\' => 13,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Webkul\\Shop\\' => 
+        'Webkul\\Store\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Webkul\\Shop\\' => array($baseDir . '/src'),
+    'Webkul\\Store\\' => array($baseDir . '/src'),
 );

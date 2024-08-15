@@ -35,6 +35,7 @@ return [
                 'package_assets_directory' => 'src/Resources/assets',
             ],
         ],
+
     ],
 
     /*
