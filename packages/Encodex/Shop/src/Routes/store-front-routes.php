@@ -1,13 +1,13 @@
 <?php
 
+use Encodex\Shop\Http\Controllers\CompareController;
+use Encodex\Shop\Http\Controllers\HomeController;
+use Encodex\Shop\Http\Controllers\PageController;
+use Encodex\Shop\Http\Controllers\ProductController;
+use Encodex\Shop\Http\Controllers\ProductsCategoriesProxyController;
+use Encodex\Shop\Http\Controllers\SearchController;
+use Encodex\Shop\Http\Controllers\SubscriptionController;
 use Illuminate\Support\Facades\Route;
-use Webkul\Shop\Http\Controllers\CompareController;
-use Webkul\Shop\Http\Controllers\HomeController;
-use Webkul\Shop\Http\Controllers\PageController;
-use Webkul\Shop\Http\Controllers\ProductController;
-use Webkul\Shop\Http\Controllers\ProductsCategoriesProxyController;
-use Webkul\Shop\Http\Controllers\SearchController;
-use Webkul\Shop\Http\Controllers\SubscriptionController;
 
 /**
  * CMS pages.

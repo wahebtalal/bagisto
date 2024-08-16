@@ -27,7 +27,6 @@ class SearchController extends Controller
         $this->validate(request(), [
             'query' => ['required', 'string', 'regex:/^[^\\\\]+$/u'],
         ]);
-
         $searchTerm = $this->searchTermRepository->findOneWhere([
             'term'       => request()->query('query'),
             'channel_id' => core()->getCurrentChannel()->id,

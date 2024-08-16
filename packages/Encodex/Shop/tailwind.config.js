@@ -43,7 +43,7 @@ module.exports = {
             },
 
             fontFamily: {
-                poppins: ["Poppins"],
+                poppins: ["Tajawal"],
                 dmserif: ["DM Serif Display"],
             },
         }
