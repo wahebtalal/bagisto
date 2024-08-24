@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'admin-default' => 'default',
+    'admin-default' => 'Encodex',
 
     'admin' => [
         'default' => [
@@ -62,6 +62,17 @@ return [
             'vite'        => [
                 'hot_file'                 => 'admin-default-vite.hot',
                 'build_directory'          => 'themes/admin/default/build',
+                'package_assets_directory' => 'src/Resources/assets',
+            ],
+        ],
+        'Encodex' => [
+            'name'        => 'Encodex',
+            'assets_path' => 'public/themes/admin/Encodex',
+            'views_path'  => 'packages/Encodex/Admin/src/Resources/views',
+
+            'vite'        => [
+                'hot_file'                 => 'admin-Encodex-vite.hot',
+                'build_directory'          => 'themes/admin/Encodex/build',
                 'package_assets_directory' => 'src/Resources/assets',
             ],
         ],

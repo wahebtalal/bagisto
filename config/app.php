@@ -206,6 +206,7 @@ return [
          * Webkul package service providers.
          */
         Webkul\Admin\Providers\AdminServiceProvider::class,
+        Encodex\Admin\Providers\AdminServiceProvider::class,
         Webkul\Attribute\Providers\AttributeServiceProvider::class,
         Webkul\CartRule\Providers\CartRuleServiceProvider::class,
         Webkul\CatalogRule\Providers\CatalogRuleServiceProvider::class,
