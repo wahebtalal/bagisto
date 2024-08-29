@@ -168,7 +168,6 @@
 
                 methods: {
                     getCart() {
-                        console.log('getcard');
                         this.$axios.get("{{ route('shop.checkout.onepage.summary') }}")
                             .then(response => {
                                 this.cart = response.data.data;
