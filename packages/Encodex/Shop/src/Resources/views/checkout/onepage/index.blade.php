@@ -146,7 +146,7 @@
                             prices: "{{ core()->getConfigData('sales.taxes.shopping_cart.display_prices') }}",
 
                             subtotal: "{{ core()->getConfigData('sales.taxes.shopping_cart.display_subtotal') }}",
-                            
+
                             shipping: "{{ core()->getConfigData('sales.taxes.shopping_cart.display_shipping_amount') }}",
                         },
 
@@ -168,6 +168,7 @@
 
                 methods: {
                     getCart() {
+                        console.log('getcard');
                         this.$axios.get("{{ route('shop.checkout.onepage.summary') }}")
                             .then(response => {
                                 this.cart = response.data.data;
@@ -179,10 +180,9 @@
 
                     stepForward(step) {
                         this.currentStep = step;
-
                         if (step == 'review') {
                             this.canPlaceOrder = true;
-
+                            // this.getCart();
                             return;
                         }
 

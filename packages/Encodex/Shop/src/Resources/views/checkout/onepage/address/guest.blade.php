@@ -32,7 +32,7 @@
                             @lang('shop::app.checkout.onepage.address.billing-address')
                         </h2>
                     </div>
-                
+
                     <!-- Billing Address Form -->
                     <v-checkout-address-form
                         control-name="billing"
@@ -79,7 +79,7 @@
                                 @lang('shop::app.checkout.onepage.address.shipping-address')
                             </h2>
                         </div>
-                    
+
                         <!-- Shipping Address Form -->
                         <v-checkout-address-form
                             control-name="shipping"

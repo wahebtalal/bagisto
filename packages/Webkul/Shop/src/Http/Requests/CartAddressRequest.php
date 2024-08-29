@@ -53,8 +53,8 @@ class CartAddressRequest extends FormRequest
             "{$addressType}.address"      => ['required', 'array', 'min:1'],
             "{$addressType}.city"         => ['required'],
             "{$addressType}.country"      => core()->isCountryRequired() ? ['required'] : ['nullable'],
-            "{$addressType}.state"        => core()->isStateRequired() ? ['required'] : ['nullable'],
-            "{$addressType}.postcode"     => core()->isPostCodeRequired() ? ['required', 'numeric'] : ['numeric'],
+            "{$addressType}.state"        => ['nullable'],
+            "{$addressType}.postcode"     => ['numeric'],
             "{$addressType}.phone"        => ['required', new PhoneNumber],
         ]);
     }
