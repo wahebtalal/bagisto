@@ -19,7 +19,7 @@ class ShopServiceProvider extends ServiceProvider
      */
     public function boot(Router $router): void
     {
-        /* loaders */
+//        /* loaders */
 //        Route::middleware('web')->group(__DIR__.'/../Routes/web.php');
 //        Route::middleware('web')->group(__DIR__.'/../Routes/api.php');
 

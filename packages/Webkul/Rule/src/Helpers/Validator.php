@@ -74,7 +74,7 @@ class Validator
             case 'cart':
                 $cart = $entity instanceof CheckoutContract ? $entity : $entity->cart;
 
-                if (in_array($attributeCode, ['postcode', 'state', 'country'])) {
+                if (in_array($attributeCode, [ 'country'])) {
                     if (! $cart->shipping_address) {
                         return;
                     }
