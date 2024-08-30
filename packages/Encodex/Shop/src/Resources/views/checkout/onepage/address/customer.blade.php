@@ -92,8 +92,8 @@
                                         </template>
 
                                         @{{ address.city }},
-                                        @{{ address.state }}, @{{ address.country }},
-                                        @{{ address.postcode }}
+                                        @{{ address.country }},
+
                                     </p>
                                 </label>
                             </div>
@@ -212,8 +212,8 @@
                                                 </template>
 
                                                 @{{ address.city }},
-                                                @{{ address.state }}, @{{ address.country }},
-                                                @{{ address.postcode }}
+                                                 @{{ address.country }},
+
                                             </p>
                                         </label>
                                     </div>
@@ -285,7 +285,7 @@
                                 @lang('shop::app.checkout.onepage.address.back')
                             </span>
                         </div>
-                        
+
                         <!-- Address Form Vue Component -->
                         <v-checkout-address-form
                             :control-name="activeAddressForm"
@@ -339,7 +339,7 @@
                 return {
                     customerSavedAddresses: {
                         'billing': [],
-                        
+
                         'shipping': [],
                     },
 
@@ -415,7 +415,7 @@
                         });
                     } else {
                         this.selectedAddresses[type + '_address_id'] = cartAddress.id;
-                        
+
                         addresses.unshift(cartAddress);
                     }
 

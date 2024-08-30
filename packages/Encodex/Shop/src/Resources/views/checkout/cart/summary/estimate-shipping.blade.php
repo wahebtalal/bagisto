@@ -30,7 +30,7 @@
                 <p class="mb-4 max-sm:text-sm">
                     @lang('shop::app.checkout.cart.summary.estimate-shipping.info')
                 </p>
-                
+
                 <!-- Country -->
                 <x-shop::form.control-group class="!mb-2.5">
                     <x-shop::form.control-group.label class="{{ core()->isCountryRequired() ? 'required' : '' }}">
@@ -62,64 +62,7 @@
 
                 {!! view_render_event('bagisto.shop.checkout.onepage.address.form.country.after') !!}
 
-                <!-- State -->
-                <x-shop::form.control-group>
-                    <x-shop::form.control-group.label class="{{ core()->isStateRequired() ? 'required' : '' }}">
-                        @lang('shop::app.checkout.cart.summary.estimate-shipping.state')
-                    </x-shop::form.control-group.label>
 
-                    <template v-if="states">
-                        <template v-if="haveStates">
-                            <x-shop::form.control-group.control
-                                type="select"
-                                name="state"
-                                rules="{{ core()->isStateRequired() ? 'required' : '' }}"
-                                :label="trans('shop::app.checkout.cart.summary.estimate-shipping.state')"
-                                :placeholder="trans('shop::app.checkout.cart.summary.estimate-shipping.state')"
-                            >
-                                <option value="">
-                                    @lang('shop::app.checkout.cart.summary.estimate-shipping.select-state')
-                                </option>
-
-                                <option
-                                    v-for='(state, index) in states[selectedCountry]'
-                                    :value="state.code"
-                                >
-                                    @{{ state.default_name }}
-                                </option>
-                            </x-shop::form.control-group.control>
-                        </template>
-
-                        <template v-else>
-                            <x-shop::form.control-group.control
-                                type="text"
-                                name="state"
-                                rules="{{ core()->isStateRequired() ? 'required' : '' }}"
-                                :label="trans('shop::app.checkout.cart.summary.estimate-shipping.state')"
-                                :placeholder="trans('shop::app.checkout.cart.summary.estimate-shipping.state')"
-                            />
-                        </template>
-                    </template>
-
-                    <x-shop::form.control-group.error name="state" />
-                </x-shop::form.control-group>
-
-                <!-- Postcode -->
-                <x-shop::form.control-group class="!mb-0">
-                    <x-shop::form.control-group.label class="{{ core()->isPostCodeRequired() ? 'required' : '' }}">
-                        @lang('shop::app.checkout.cart.summary.estimate-shipping.postcode')
-                    </x-shop::form.control-group.label>
-
-                    <x-shop::form.control-group.control
-                        type="text"
-                        name="postcode"
-                        rules="{{ core()->isPostCodeRequired() ? 'required' : '' }}"
-                        :label="trans('shop::app.checkout.cart.summary.estimate-shipping.postcode')"
-                        :placeholder="trans('shop::app.checkout.cart.summary.estimate-shipping.postcode')"
-                    />
-
-                    <x-shop::form.control-group.error control-name="postcode" />
-                </x-shop::form.control-group>
 
                 <!-- Estimated Shipping Methods -->
                 <div
@@ -144,14 +87,14 @@
                                 />
                             </div>
 
-                            <label 
+                            <label
                                 class="block cursor-pointer p-4 pl-12"
                                 :for="rate.method"
                             >
                                 <p class="text-2xl font-semibold max-md:text-lg">
                                     @{{ rate.base_formatted_price }}
                                 </p>
-                                
+
                                 <p class="mt-2.5 text-xs font-medium max-md:mt-0">
                                     <span class="font-medium">@{{ rate.method_title }}</span> - @{{ rate.method_description }}
                                 </p>
@@ -161,14 +104,14 @@
                         {!! view_render_event('bagisto.shop.checkout.onepage.shipping.after') !!}
                     </template>
                 </div>
-            </form>                    
+            </form>
         </x-shop::form>
     </script>
 
     <script type="module">
         app.component('v-estimate-tax-shipping', {
             template: '#v-estimate-tax-shipping-template',
-            
+
             props: ['cart'],
 
             data() {
@@ -194,7 +137,7 @@
             mounted() {
                 this.getCountries();
 
-                this.getStates();
+
             },
 
             methods: {
@@ -206,19 +149,11 @@
                         .catch(() => {});
                 },
 
-                getStates() {
-                    this.$axios.get("{{ route('shop.api.core.states') }}")
-                        .then(response => {
-                            this.states = response.data.data;
-                        })
-                        .catch(() => {});
-                },
-
                 estimateShipping(params, { setErrors }) {
                     this.isStoring = true;
 
                     Object.keys(params).forEach(key => params[key] == null && delete params[key]);
-                    
+
                     this.$axios.post('{{ route('shop.api.checkout.cart.estimate_shipping') }}', params)
                         .then((response) => {
                             this.isStoring = false;
