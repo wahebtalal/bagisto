@@ -131,7 +131,7 @@ class OnepageController extends APIController
                 'redirect_url' => route('shop.checkout.cart.index'),
             ], Response::HTTP_FORBIDDEN);
         }
-
+        Shipping::collectRates();
         Cart::collectTotals();
 
         $cart = Cart::getCart();

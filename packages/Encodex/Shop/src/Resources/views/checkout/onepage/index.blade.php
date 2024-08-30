@@ -181,7 +181,6 @@
                         this.currentStep = step;
                         if (step == 'review') {
                             this.canPlaceOrder = true;
-                            // this.getCart();
                             return;
                         }
 
