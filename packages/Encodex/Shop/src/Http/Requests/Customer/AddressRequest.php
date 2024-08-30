@@ -33,7 +33,7 @@ class AddressRequest extends FormRequest
             'country'      => core()->isCountryRequired() ? ['required'] : ['nullable'],
             'state'        => core()->isStateRequired() ? ['required'] : ['nullable'],
             'city'         => ['required', 'string'],
-            'postcode'     => core()->isPostCodeRequired() ? ['required', 'numeric'] : ['numeric'],
+            'postcode'     => core()->isPostCodeRequired() ? ['nullable', 'numeric'] : ['nullable', 'numeric'],
             'phone'        => ['required', new PhoneNumber],
             'vat_id'       => [new VatIdRule],
             'email'        => ['required'],

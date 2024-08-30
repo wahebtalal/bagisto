@@ -2,7 +2,7 @@
     <!-- Page Title -->
     <x-slot:title>
         @lang('shop::app.customers.account.addresses.edit.edit')
-        @lang('shop::app.customers.account.addresses.edit.title') 
+        @lang('shop::app.customers.account.addresses.edit.title')
     </x-slot>
 
     <!-- Breadcrumbs -->
@@ -216,8 +216,8 @@
                         :label="trans('shop::app.customers.account.addresses.edit.country')"
                     >
                         @foreach (core()->countries() as $country)
-                            <option 
-                                {{ $country->code === config('app.default_country') ? 'selected' : '' }}  
+                            <option
+                                {{ $country->code === config('app.default_country') ? 'selected' : '' }}
                                 value="{{ $country->code }}"
                             >
                                 {{ $country->name }}
@@ -230,43 +230,7 @@
 
                 {!! view_render_event('bagisto.shop.customers.account.addresses.edit_form_controls.country.after', ['address' => $address]) !!}
 
-                <!-- State Name -->
-                <x-shop::form.control-group>
-                    <x-shop::form.control-group.label class="{{ core()->isStateRequired() ? 'required' : '' }}">
-                        @lang('shop::app.customers.account.addresses.edit.state')
-                    </x-shop::form.control-group.label>
-                    <template v-if="haveStates()">
-                        <x-shop::form.control-group.control
-                            type="select"
-                            name="state"
-                            id="state"
-                            rules="{{ core()->isStateRequired() ? 'required' : '' }}"
-                            v-model="addressData.state"
-                            :label="trans('shop::app.customers.account.addresses.edit.state')"
-                            :placeholder="trans('shop::app.customers.account.addresses.edit.state')"
-                        >
-                            <option 
-                                v-for='(state, index) in countryStates[addressData.country]'
-                                :value="state.code"
-                            >
-                                @{{ state.default_name }}
-                            </option>
-                        </x-shop::form.control-group.control>
-                    </template>
 
-                    <template v-else>
-                        <x-shop::form.control-group.control
-                            type="text"
-                            name="state"
-                            rules="{{ core()->isStateRequired() ? 'required' : '' }}"
-                            :value="old('state') ?? $address->state"
-                            :label="trans('shop::app.customers.account.addresses.edit.state')"
-                            :placeholder="trans('shop::app.customers.account.addresses.edit.state')"
-                        />
-                    </template>
-
-                    <x-shop::form.control-group.error control-name="state" />
-                </x-shop::form.control-group>
 
                 {!! view_render_event('bagisto.shop.customers.account.addresses.edit_form_controls.state.after', ['address' => $address]) !!}
 
@@ -289,22 +253,7 @@
 
                 {!! view_render_event('bagisto.shop.customers.account.addresses.edit_form_controls.city.after', ['address' => $address]) !!}
 
-                <x-shop::form.control-group>
-                    <x-shop::form.control-group.label class="{{ core()->isPostCodeRequired() ? 'required' : '' }}">
-                        @lang('shop::app.customers.account.addresses.edit.post-code')
-                    </x-shop::form.control-group.label>
 
-                    <x-shop::form.control-group.control
-                        type="text"
-                        name="postcode"
-                        rules="{{ core()->isPostCodeRequired() ? 'required' : '' }}|numeric "
-                        :value="old('postal-code') ?? $address->postcode"
-                        :label="trans('shop::app.customers.account.addresses.edit.post-code')"
-                        :placeholder="trans('shop::app.customers.account.addresses.edit.post-code')"
-                    />
-
-                    <x-shop::form.control-group.error control-name="postcode" />
-                </x-shop::form.control-group>
 
                 {!! view_render_event('bagisto.shop.customers.account.addresses.edit_form_controls.postcode.after', ['address' => $address]) !!}
 
@@ -333,7 +282,7 @@
                 >
                     @lang('shop::app.customers.account.addresses.edit.update-btn')
                 </button>
-                
+
                 {!! view_render_event('bagisto.shop.customers.account.address.edit_form_controls.after', ['address' => $address]) !!}
 
             </x-shop::form>
@@ -348,18 +297,12 @@
                         addressData: {
                             country: "{{ old('country') ?? $address->country }}",
 
-                            state: "{{ old('state') ?? $address->state }}",
                         },
 
-                        countryStates: @json(core()->groupedStatesByCountries()),
                     };
                 },
-    
-                methods: {
-                    haveStates() {
-                        return !!this.countryStates[this.addressData.country]?.length;
-                    },
-                },
+
+
             });
         </script>
     @endpush

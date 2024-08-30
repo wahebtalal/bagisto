@@ -51,7 +51,7 @@
                         <x-shop::form.control-group.label>
                             @lang('shop::app.customers.account.addresses.create.company-name')
                         </x-shop::form.control-group.label>
-            
+
                         <x-shop::form.control-group.control
                             type="text"
                             name="company_name"
@@ -59,7 +59,7 @@
                             :label="trans('shop::app.customers.account.addresses.create.company-name')"
                             :placeholder="trans('shop::app.customers.account.addresses.create.company-name')"
                         />
-            
+
                         <x-shop::form.control-group.error control-name="company_name" />
                     </x-shop::form.control-group>
 
@@ -192,7 +192,7 @@
                         <x-shop::form.control-group.label class="{{ core()->isCountryRequired() ? 'required' : '' }}">
                             @lang('shop::app.customers.account.addresses.create.country')
                         </x-shop::form.control-group.label>
-            
+
                         <x-shop::form.control-group.control
                             type="select"
                             name="country"
@@ -204,53 +204,16 @@
                             <option value="">
                                 @lang('shop::app.customers.account.addresses.create.select-country')
                             </option>
-            
+
                             @foreach (core()->countries() as $country)
                                 <option value="{{ $country->code }}">{{ $country->name }}</option>
                             @endforeach
                         </x-shop::form.control-group.control>
-            
+
                         <x-shop::form.control-group.error control-name="country" />
                     </x-shop::form.control-group>
-        
-                    <!-- State Name -->
-                    <x-shop::form.control-group>
-                        <x-shop::form.control-group.label class="{{ core()->isStateRequired() ? 'required' : '' }}">
-                            @lang('shop::app.customers.account.addresses.create.state')
-                        </x-shop::form.control-group.label>
-        
-                        <template v-if="haveStates()">
-                            <x-shop::form.control-group.control
-                                type="select"
-                                id="state"
-                                name="state"
-                                rules="{{ core()->isStateRequired() ? 'required' : '' }}"
-                                v-model="state"
-                                :label="trans('shop::app.customers.account.addresses.create.state')"
-                                :placeholder="trans('shop::app.customers.account.addresses.create.state')"
-                            >
-                                <option 
-                                    v-for='(state, index) in countryStates[country]'
-                                    :value="state.code"
-                                >
-                                    @{{ state.default_name }}
-                                </option>
-                            </x-shop::form.control-group.control>
-                        </template>
-        
-                        <template v-else>
-                            <x-shop::form.control-group.control
-                                type="text"
-                                name="state"
-                                :value="old('state')"
-                                rules="{{ core()->isStateRequired() ? 'required' : '' }}"
-                                :label="trans('shop::app.customers.account.addresses.create.state')"
-                                :placeholder="trans('shop::app.customers.account.addresses.create.state')"
-                            />
-                        </template>
-        
-                        <x-shop::form.control-group.error control-name="state" />
-                    </x-shop::form.control-group>
+
+
 
                     {!! view_render_event('bagisto.shop.customers.account.addresses.create_form_controls.state.after') !!}
 
@@ -274,23 +237,6 @@
 
                     {!! view_render_event('bagisto.shop.customers.account.addresses.create_form_controls.city.after') !!}
 
-                    <!-- Post Code -->
-                    <x-shop::form.control-group>
-                        <x-shop::form.control-group.label class="{{ core()->isPostCodeRequired() ? 'required' : '' }}">
-                            @lang('shop::app.customers.account.addresses.create.post-code')
-                        </x-shop::form.control-group.label>
-
-                        <x-shop::form.control-group.control
-                            type="text"
-                            name="postcode"
-                            rules="{{ core()->isPostCodeRequired() ? 'required' : '' }}|numeric"
-                            :value="old('postcode')"
-                            :label="trans('shop::app.customers.account.addresses.create.post-code')"
-                            :placeholder="trans('shop::app.customers.account.addresses.create.post-code')"
-                        />
-
-                        <x-shop::form.control-group.error control-name="postcode" />
-                    </x-shop::form.control-group>
 
                     {!! view_render_event('bagisto.shop.customers.account.addresses.create_form_controls.postcode.after') !!}
 
@@ -330,7 +276,7 @@
                         >
                         </label>
 
-                        <label 
+                        <label
                             class="block cursor-pointer text-base max-md:text-sm"
                             for="default_address"
                         >
@@ -350,31 +296,20 @@
                 {!! view_render_event('bagisto.shop.customers.account.address.create.after') !!}
             </div>
         </script>
-    
+
         <script type="module">
             app.component('v-create-customer-address', {
                 template: '#v-create-customer-address-template',
-    
+
                 data() {
                     return {
                         country: "{{ old('country') }}",
 
-                        state: "{{ old('state') }}",
 
-                        countryStates: @json(core()->groupedStatesByCountries()),
                     }
                 },
-    
-                methods: {
-                    haveStates() {
-                        /*
-                        * The double negation operator is used to convert the value to a boolean.
-                        * It ensures that the final result is a boolean value,
-                        * true if the array has a length greater than 0, and otherwise false.
-                        */
-                        return !!this.countryStates[this.country]?.length;
-                    },
-                }
+
+
             });
         </script>
     @endpush
