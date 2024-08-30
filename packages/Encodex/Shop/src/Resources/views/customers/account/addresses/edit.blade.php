@@ -87,6 +87,7 @@
                         type="text"
                         name="first_name"
                         rules="required"
+
                         :value="old('first_name') ?? $address->first_name"
                         :label="trans('shop::app.customers.account.addresses.edit.first-name')"
                         :placeholder="trans('shop::app.customers.account.addresses.edit.first-name')"
