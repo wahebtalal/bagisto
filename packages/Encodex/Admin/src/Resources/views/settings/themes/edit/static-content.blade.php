@@ -9,7 +9,7 @@
         id="v-static-content-template"
     >
         <div class="flex flex-1 flex-col gap-2 max-xl:flex-auto">
-            <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+            <div style="direction: ltr" class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
                 <div class="mb-2.5 flex items-center justify-between gap-x-2.5">
                     <div class="flex flex-col gap-1">
                         <p class="text-base font-semibold text-gray-800 dark:text-white">
@@ -33,7 +33,7 @@
                             @lang('admin::app.settings.themes.edit.add-image-btn')
                         </label>
 
-                        <input 
+                        <input
                             type="file"
                             name="static_image"
                             id="static_image"
@@ -45,7 +45,7 @@
                         >
                     </div>
                 </div>
-                
+
                 <div class="pt-4 text-center text-sm font-medium text-gray-500">
                     <div class="tabs">
                         <div class="mb-4 flex gap-4 border-b-2 pt-2 max-sm:hidden">
@@ -95,7 +95,7 @@
                 />
 
                 <KeepAlive class="dark:bg-white">
-                    <component 
+                    <component
                         :is="inittialEditor"
                         ref="editor"
                         @editor-data="editorData"
@@ -150,7 +150,7 @@
             created() {
                 if (this.options === null) {
                     this.options = { html: {} };
-                }   
+                }
             },
 
             methods: {
@@ -169,7 +169,7 @@
                         this.options.html = value.html;
                     } else {
                         this.options.css = value.css;
-                    } 
+                    }
                 },
 
                 storeImage($event) {
@@ -204,7 +204,7 @@
     <script type="module">
         app.component('v-html-editor-theme', {
             template: '#v-html-editor-theme-template',
-            
+
             data() {
                 return {
                     options:{
@@ -288,7 +288,7 @@
             },
         });
     </script>
-    
+
     <!-- Css Editor Component -->
     <script type="module">
         app.component('v-css-editor-theme', {
@@ -333,7 +333,7 @@
             },
         });
     </script>
-    
+
     <!-- Static Content Previewer -->
     <script type="module">
         app.component('v-static-content-previewer', {
@@ -360,8 +360,8 @@
     >
     </script>
 
-    <!-- 
-        Html mixed and xml cnd both are dependent 
+    <!--
+        Html mixed and xml cnd both are dependent
         Used for html and css theme
     -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/xml/xml.js"></script>
@@ -376,7 +376,7 @@
 
 @pushOnce('styles')
     <!-- Code mirror style cdn -->
-    <link 
+    <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/codemirror.css"
     >
