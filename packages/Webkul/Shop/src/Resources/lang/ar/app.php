@@ -8,9 +8,9 @@ return [
             'bagisto'              => 'باغيستو',
             'email'                => 'البريد الإلكتروني',
             'email-not-exist'      => 'لا يمكننا العثور على مستخدم بهذا البريد الإلكتروني',
-            'footer'               => '© حقوق الطبع والنشر 2010 - :current_year، Webkul Software (مسجلة في الهند). جميع الحقوق محفوظة.',
+            'footer'               => '© حقوق الطبع والنشر :current_year، EncodeX Software جميع الحقوق محفوظة.',
             'forgot-password-text' => 'إذا نسيت كلمة المرور الخاصة بك، يمكنك استعادتها عن طريق إدخال عنوان البريد الإلكتروني الخاص بك.',
-            'page-title'           => 'هل نسيت كلمة المرور؟',
+            'page-title'           => 'هل نسيت كلمة المرور ؟',
             'reset-link-sent'      => 'تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني.',
             'sign-in-button'       => 'تسجيل الدخول',
             'submit'               => 'إعادة تعيين كلمة المرور',
@@ -22,7 +22,7 @@ return [
             'bagisto'          => 'باغيستو',
             'confirm-password' => 'تأكيد كلمة المرور',
             'email'            => 'البريد الإلكتروني المسجل',
-            'footer'           => '© حقوق الطبع والنشر 2010 - :current_year، Webkul Software (مسجلة في الهند). جميع الحقوق محفوظة.',
+            'footer'           => '© حقوق الطبع والنشر :current_year، EncodeX Software  جميع الحقوق محفوظة.',
             'password'         => 'كلمة المرور',
             'submit-btn-title' => 'إعادة تعيين كلمة المرور',
             'title'            => 'إعادة تعيين كلمة المرور',
@@ -53,10 +53,10 @@ return [
             'confirm-pass'                => 'تأكيد كلمة المرور',
             'email'                       => 'البريد الإلكتروني',
             'first-name'                  => 'الاسم الأول',
-            'footer'                      => '© حقوق الطبع والنشر 2010 - :current_year، Webkul Software (مسجلة في الهند). جميع الحقوق محفوظة.',
-            'form-signup-text'            => 'إذا كنت جديدًا في متجرنا، فنحن سعداء بانضمامك كعضو.',
+            'footer'                      => '© حقوق الطبع والنشر :current_year، EncodeX Software  جميع الحقوق محفوظة.',
+            'form-signup-text'            => 'إذا كنت جديداً في متجرنا، فنحن سعداء بانضمامك كعضو.',
             'last-name'                   => 'اسم العائلة',
-            'page-title'                  => 'كن مستخدمًا',
+            'page-title'                  => 'كن مستخدماً',
             'password'                    => 'كلمة المرور',
             'sign-in-button'              => 'تسجيل الدخول',
             'subscribe-to-newsletter'     => 'الاشتراك في النشرة الإخبارية',
@@ -182,7 +182,7 @@ return [
                     'title' => 'الحالة',
 
                     'options' => [
-                        'canceled'        => 'ملغى',
+                        'canceled'        => 'ملغي',
                         'closed'          => 'مغلق',
                         'completed'       => 'مكتمل',
                         'fraud'           => 'احتيال',
@@ -195,7 +195,7 @@ return [
                 'view' => [
                     'billing-address'      => 'عنوان الفاتورة',
                     'cancel-btn-title'     => 'إلغاء',
-                    'cancel-confirm-msg'   => 'هل أنت متأكد أنك تريد إلغاء هذا الطلب؟',
+                    'cancel-confirm-msg'   => 'هل أنت متأكد أنك تريد إلغاء هذا الطلب ؟',
                     'cancel-error'         => 'لا يمكن إلغاء طلبك.',
                     'cancel-success'       => 'تم إلغاء طلبك',
                     'contact'              => 'اتصال',
@@ -349,7 +349,7 @@ return [
                 'orderId'             => 'رقم الطلب',
                 'payment-error'       => 'لم يتم دفع هذا التنزيل بعد',
                 'pending'             => 'قيد الانتظار',
-                'records-found'       => 'سجل(سجلات) وجد',
+                'records-found'       => 'وجد سجل ( سجلات )',
                 'remaining-downloads' => 'التنزيلات المتبقية',
                 'status'              => 'الحالة',
                 'title'               => 'العنوان',
@@ -358,20 +358,20 @@ return [
             'wishlist' => [
                 'color'              => 'اللون',
                 'delete-all'         => 'حذف الكل',
-                'empty'              => 'لم يتم إضافة منتجات إلى صفحة قائمة الأماني',
+                'empty'              => 'لم يتم إضافة منتجات إلى صفحة قائمة المفضلة',
                 'move-to-cart'       => 'نقل إلى السلة',
                 'moved'              => 'تم نقل العنصر بنجاح إلى السلة',
                 'moved-success'      => 'تم نقل العنصر بنجاح إلى العربة',
-                'page-title'         => 'قائمة الأماني',
+                'page-title'         => 'قائمة المفضلة',
                 'product-removed'    => 'المنتج غير متاح بعد الإزالة بواسطة المشرف',
                 'profile'            => 'الملف الشخصي',
                 'remove'             => 'إزالة',
-                'remove-all-success' => 'تمت إزالة جميع العناصر من قائمة الأماني الخاصة بك',
-                'remove-fail'        => 'لا يمكن إزالة العنصر من قائمة الأماني',
-                'removed'            => 'تم إزالة العنصر بنجاح من قائمة الأماني',
+                'remove-all-success' => 'تمت إزالة جميع العناصر من قائمة المفضلة الخاصة بك',
+                'remove-fail'        => 'لا يمكن إزالة العنصر من قائمة المفضلة',
+                'removed'            => 'تم إزالة العنصر بنجاح من قائمة المفضلة',
                 'see-details'        => 'رؤية التفاصيل',
-                'success'            => 'تمت إضافة العنصر بنجاح إلى قائمة الأماني',
-                'title'              => 'قائمة الأماني',
+                'success'            => 'تمت إضافة العنصر بنجاح إلى قائمة المفضلة',
+                'title'              => 'قائمة المفضلة',
             ],
         ],
     ],
@@ -434,7 +434,7 @@ return [
                 'customer-service'       => 'خدمة العملاء',
                 'email'                  => 'البريد الإلكتروني',
                 'footer-content'         => 'محتوى التذييل',
-                'footer-text'            => '© حقوق النشر 2010 - :current_year ، Webkul Software (مسجلة في الهند). كل الحقوق محفوظة.',
+                'footer-text'            => '© حقوق النشر :current_year ، EncodeX Software  كل الحقوق محفوظة.',
                 'locale'                 => 'اللغة',
                 'newsletter-text'        => 'احصل على نشرتنا الممتعة!',
                 'order-return'           => 'الطلب والمرتجعات',
@@ -466,8 +466,8 @@ return [
                 ],
 
                 'filter' => [
-                    'apply-filter' => 'تطبيق الفلاتر',
-                    'title'        => 'الفلتر',
+                    'apply-filter' => 'تطبيق التصفية',
+                    'title'        => 'التصفية',
 
                     'dropdown' => [
                         'select' => 'اختر',
@@ -514,7 +514,7 @@ return [
                 'add-to-cart'            => 'أضف إلى السلة',
                 'add-to-compare'         => 'أضف إلى قائمة المقارنة',
                 'add-to-compare-success' => 'تمت إضافة العنصر بنجاح إلى قائمة المقارنة.',
-                'add-to-wishlist'        => 'أضف إلى قائمة الرغبات',
+                'add-to-wishlist'        => 'أضف إلى قائمة المفضلة',
                 'already-in-compare'     => 'العنصر مضاف بالفعل إلى قائمة المقارنة.',
                 'new'                    => 'جديد',
                 'review-description'     => 'كن أول من يقيم هذا المنتج',
@@ -553,7 +553,8 @@ return [
     'products' => [
         'prices' => [
             'grouped' => [
-                'starting-at' => 'بدءًا من',
+                'starting-at' => 'بدءا
+ من',
             ],
 
             'configurable' => [
@@ -569,8 +570,8 @@ return [
         'view' => [
             'type' => [
                 'configurable' => [
-                    'select-options'       => 'يرجى اختيار خيار',
-                    'select-above-options' => 'يرجى اختيار الخيارات أعلاه',
+                    'select-options'       => 'يرجى تحديد خيار',
+                    'select-above-options' => 'يرجى تحديد الخيارات أعلاه',
                 ],
 
                 'bundle' => [
@@ -608,13 +609,13 @@ return [
                 'success'          => 'تم إرسال المراجعة بنجاح.',
                 'title'            => 'العنوان',
                 'translate'        => 'ترجمة',
-                'translating'      => 'جار الترجمة...',
+                'translating'      => 'جار الترجمة ...',
                 'write-a-review'   => 'كتابة مراجعة',
             ],
 
             'add-to-cart'            => 'أضف إلى السلة',
             'add-to-compare'         => 'تمت إضافة المنتج إلى قائمة المقارنة.',
-            'add-to-wishlist'        => 'أضف إلى قائمة الرغبات',
+            'add-to-wishlist'        => 'أضف إلى قائمة المفضلة',
             'additional-information' => 'معلومات إضافية',
             'already-in-compare'     => 'المنتج مضاف بالفعل إلى قائمة المقارنة.',
             'buy-now'                => 'اشتر الآن',
@@ -636,8 +637,8 @@ return [
     'categories' => [
         'filters' => [
             'clear-all' => 'مسح الكل',
-            'filters'   => 'الفلاتر:',
-            'filter'    => 'فلتر',
+            'filters'   => 'التصفية:',
+            'filter'    => 'تصفية',
             'sort'      => 'ترتيب',
         ],
 
@@ -862,7 +863,7 @@ return [
     'home' => [
         'contact' => [
             'about'         => 'أكتب لنا ملاحظة وسنعود إليك في أقرب وقت ممكن',
-            'desc'          => 'ما الذي يجول في ذهنك؟',
+            'desc'          => 'ما الذي يجول في ذهنك ؟',
             'describe-here' => 'صف هنا',
             'email'         => 'البريد الإلكتروني',
             'message'       => 'الرسالة',
@@ -928,7 +929,7 @@ return [
         'orders'                => 'الطلبات',
         'profile'               => 'الملف الشخصي',
         'reviews'               => 'التقييمات',
-        'wishlist'              => 'قائمة الرغبات',
+        'wishlist'              => 'قائمة المفضلة',
     ],
 
     'subscription' => [
