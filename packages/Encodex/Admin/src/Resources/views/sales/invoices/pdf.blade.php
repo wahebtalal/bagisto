@@ -4,108 +4,47 @@
     dir="{{ core()->getCurrentLocale()->direction }}"
 >
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
         <!-- meta tags -->
         <meta http-equiv="Cache-control" content="no-cache">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-        @php
-            $fontPath = [];
-            
-            $fontFamily = [
-                'regular' => 'Arial, sans-serif',
-                'bold'    => 'Arial, sans-serif',
-            ];
-
-            if (in_array(app()->getLocale(), ['ar', 'he', 'fa', 'tr', 'ru', 'uk'])) {
-                $fontFamily = [
-                    'regular' => 'DejaVu Sans',
-                    'bold'    => 'DejaVu Sans',
-                ];
-            } elseif (app()->getLocale() == 'zh_CN') {
-                $fontPath = [
-                    'regular' => asset('fonts/NotoSansSC-Regular.ttf'),
-                    'bold'    => asset('fonts/NotoSansSC-Bold.ttf'),
-                ];
-                
-                $fontFamily = [
-                    'regular' => 'Noto Sans SC',
-                    'bold'    => 'Noto Sans SC Bold',
-                ];
-            } elseif (app()->getLocale() == 'ja') {
-                $fontPath = [
-                    'regular' => asset('fonts/NotoSansJP-Regular.ttf'),
-                    'bold'    => asset('fonts/NotoSansJP-Bold.ttf'),
-                ];
-                
-                $fontFamily = [
-                    'regular' => 'Noto Sans JP',
-                    'bold'    => 'Noto Sans JP Bold',
-                ];
-            } elseif (app()->getLocale() == 'hi_IN') {
-                $fontPath = [
-                    'regular' => asset('fonts/Hind-Regular.ttf'),
-                    'bold'    => asset('fonts/Hind-Bold.ttf'),
-                ];
-                
-                $fontFamily = [
-                    'regular' => 'Hind',
-                    'bold'    => 'Hind Bold',
-                ];
-            } elseif (app()->getLocale() == 'bn') {
-                $fontPath = [
-                    'regular' => asset('fonts/NotoSansBengali-Regular.ttf'),
-                    'bold'    => asset('fonts/NotoSansBengali-Bold.ttf'),
-                ];
-                
-                $fontFamily = [
-                    'regular' => 'Noto Sans Bengali',
-                    'bold'    => 'Noto Sans Bengali Bold',
-                ];
-            } elseif (app()->getLocale() == 'sin') {
-                $fontPath = [
-                    'regular' => asset('fonts/NotoSansSinhala-Regular.ttf'),
-                    'bold'    => asset('fonts/NotoSansSinhala-Bold.ttf'),
-                ];
-                
-                $fontFamily = [
-                    'regular' => 'Noto Sans Sinhala',
-                    'bold'    => 'Noto Sans Sinhala Bold',
-                ];
-            }
-        @endphp
+{{--        <!-- title --><link rel="preconnect" href="https://fonts.googleapis.com">--}}
+{{--        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>--}}
+{{--        <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">--}}
 
         <!-- lang supports inclusion -->
         <style type="text/css">
-            @if (! empty($fontPath['regular']))
                 @font-face {
-                    src: url({{ $fontPath['regular'] }}) format('truetype');
-                    font-family: {{ $fontFamily['regular'] }};
-                }
-            @endif
-            
-            @if (! empty($fontPath['bold']))
-                @font-face {
-                    src: url({{ $fontPath['bold'] }}) format('truetype');
-                    font-family: {{ $fontFamily['bold'] }};
-                    font-style: bold;
-                }
-            @endif
-            
+                    font-family: "Tajawal", sans-serif;
+
+                /*src: url("../fonts/bagisto-shop.woff") format("woff");*/
+                /*font-weight: normal;*/
+                /*font-style: normal;*/
+                /*font-display: block;*/
+            }
+
+
+
             * {
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
-                font-family: {{ $fontFamily['regular'] }};
+                font-family: "Tajawal", sans-serif;
+
             }
 
             body {
                 font-size: 10px;
-                color: #091341;
-                font-family: "{{ $fontFamily['regular'] }}";
+                /*color: #091341;*/
+                    font-family: "Tajawal", sans-serif;
+
             }
 
             b, th {
-                font-family: "{{ $fontFamily['bold'] }}";
+                font-family: "Tajawal", sans-serif;
             }
 
             .page-content {
@@ -113,11 +52,11 @@
             }
 
             .page-header {
-                border-bottom: 1px solid #E9EFFC;
+                border-bottom: 1px solid rgba(255, 252, 170, 0.81);
                 text-align: center;
                 font-size: 24px;
                 text-transform: uppercase;
-                color: #000DBB;
+                color: rgba(238, 175, 30, 0.81);
                 padding: 24px 0;
                 margin: 0;
             }
@@ -153,10 +92,10 @@
                 border-collapse: separate;
                 margin-bottom: 16px;
             }
-            
+
             table thead th {
-                background-color: #E9EFFC;
-                color: #000DBB;
+                background-color: rgba(255, 252, 170, 0.81);
+                color: black;
                 padding: 6px 18px;
                 text-align: left;
             }
@@ -167,7 +106,7 @@
 
             table tbody td {
                 padding: 9px 18px;
-                border-bottom: 1px solid #E9EFFC;
+                border-bottom: 1px solid rgba(255, 252, 170, 0.81);
                 text-align: left;
                 vertical-align: top;
             }
@@ -186,7 +125,7 @@
                 width: 250px;
                 padding-top: 5px;
                 padding-bottom: 5px;
-                background-color: #E9EFFC;
+                background-color: rgba(255, 252, 170, 0.81);
                 white-space: nowrap;
             }
 
@@ -220,7 +159,7 @@
                 <img src="data:image/png;base64,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"/>
             @endif
         </div>
-        
+
         <div class="page">
             <!-- Header -->
             <div class="page-header">
@@ -247,7 +186,7 @@
                             @if (core()->getConfigData('sales.invoice_settings.pdf_print_outs.order_id'))
                                 <td style="width: 50%; padding: 2px 18px;border:none;">
                                     <b>
-                                        @lang('admin::app.sales.invoices.invoice-pdf.order-id'): 
+                                        @lang('admin::app.sales.invoices.invoice-pdf.order-id'):
                                     </b>
 
                                     <span>
@@ -256,7 +195,7 @@
                                 </td>
                             @endif
                         </tr>
-                        
+
                         <tr>
                             <td style="width: 50%; padding: 2px 18px;border:none;">
                                 <b>
@@ -280,7 +219,7 @@
                         </tr>
                     </tbody>
                 </table>
-                
+
                 <!-- Invoice Information -->
                 <table class="{{ core()->getCurrentLocale()->direction }}">
                     <tbody>
@@ -369,7 +308,7 @@
                                     <div>@lang('admin::app.sales.invoices.invoice-pdf.contact'): {{ $invoice->order->billing_address->phone }}</div>
                                 </td>
                             @endif
-                            
+
                             @if ($invoice->order->shipping_address)
                                 <td style="width: 50%">
                                     <div>{{ $invoice->order->shipping_address->company_name ?? '' }}<div>
@@ -419,7 +358,7 @@
                                 @if (! empty($additionalDetails))
                                     <div class="row small-text">
                                         <span>{{ $additionalDetails['title'] }}:</span>
-                                        
+
                                         <span>{{ $additionalDetails['value'] }}</span>
                                     </div>
                                 @endif
@@ -485,10 +424,10 @@
                                             {!! core()->formatBasePrice($item->base_price_incl_tax, true) !!}
                                         @elseif (core()->getConfigData('sales.taxes.sales.display_prices') == 'both')
                                             {!! core()->formatBasePrice($item->base_price_incl_tax, true) !!}
-                                            
+
                                             <div class="small-text">
                                                 @lang('admin::app.sales.invoices.invoice-pdf.excl-tax')
-                                                
+
                                                 <span>
                                                     {{ core()->formatPrice($item->base_price) }}
                                                 </span>
@@ -507,10 +446,10 @@
                                             {!! core()->formatBasePrice($item->base_total_incl_tax, true) !!}
                                         @elseif (core()->getConfigData('sales.taxes.sales.display_subtotal') == 'both')
                                             {!! core()->formatBasePrice($item->base_total_incl_tax, true) !!}
-                                            
+
                                             <div class="small-text">
                                                 @lang('admin::app.sales.invoices.invoice-pdf.excl-tax')
-                                                
+
                                                 <span>
                                                     {{ core()->formatPrice($item->base_total) }}
                                                 </span>
@@ -541,7 +480,7 @@
                                     <td>-</td>
                                     <td>{!! core()->formatBasePrice($invoice->base_sub_total_incl_tax, true) !!}</td>
                                 </tr>
-                                
+
                                 <tr>
                                     <td>@lang('admin::app.sales.invoices.invoice-pdf.subtotal-excl-tax')</td>
                                     <td>-</td>
@@ -567,7 +506,7 @@
                                     <td>-</td>
                                     <td>{!! core()->formatBasePrice($invoice->base_shipping_amount_incl_tax, true) !!}</td>
                                 </tr>
-                                
+
                                 <tr>
                                     <td>@lang('admin::app.sales.invoices.invoice-pdf.shipping-handling-excl-tax')</td>
                                     <td>-</td>

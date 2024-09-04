@@ -6,16 +6,16 @@
 @font-face {
     font-family: "bagisto-shop";
     src: url("../fonts/bagisto-shop.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+    /*font-display: block;*/
 
 }@font-face {
     font-family: "Tajawal";
     /*src: url("../fonts/bagisto-shop.woff") format("woff");*/
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+    /*font-display: block;*/
 }
 /* arabic */
 .tajawal-extralight {
