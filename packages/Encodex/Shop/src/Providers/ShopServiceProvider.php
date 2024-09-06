@@ -50,7 +50,7 @@ class ShopServiceProvider extends ServiceProvider
         /* Breadcrumbs */
 //        require __DIR__.'/../Routes/breadcrumbs.php';
 
-        $this->app->register(EventServiceProvider::class);
+      // $this->app->register(EventServiceProvider::class);
     }
 
     /**
