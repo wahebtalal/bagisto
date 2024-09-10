@@ -22,7 +22,7 @@ class AdminServiceProvider extends ServiceProvider
 
         Blade::anonymousComponentPath(__DIR__.'/../Resources/views/components', 'admin');
 
-        $this->app->register(EventServiceProvider::class);
+       // $this->app->register(EventServiceProvider::class);
     }
 
     /**

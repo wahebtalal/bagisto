@@ -2,8 +2,12 @@
 
 namespace Webkul\Admin\Http\Controllers\Sales;
 
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Str;
+use Mpdf\Mpdf;
+use Mpdf\MpdfException;
 use Webkul\Admin\DataGrids\Sales\OrderInvoiceDataGrid;
 use Webkul\Admin\Http\Controllers\Controller;
 use Webkul\Core\Traits\PDFHandler;
@@ -138,9 +142,45 @@ class InvoiceController extends Controller
     {
         $invoice = $this->invoiceRepository->findOrFail($id);
 
-        return $this->downloadPDF(
+        //            return view('admin::sales.invoices.pdf', compact('invoice'));
+        return $this->downloadPDF1(
             view('admin::sales.invoices.pdf', compact('invoice'))->render(),
             'invoice-'.$invoice->created_at->format('d-m-Y')
         );
+    }
+
+    /**
+     * @throws MpdfException
+     */
+    protected function downloadPDF1(string $html, ?string $fileName = null)
+    {
+        if (is_null($fileName)) {
+            $fileName = Str::random(32);
+        }
+
+        $html = mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8');
+
+//        if (($direction = core()->getCurrentLocale()->direction) == 'rtl') {
+            $mPDF = new Mpdf([
+                'margin_left'   => 0,
+                'margin_right'  => 0,
+                'margin_top'    => 0,
+                'margin_bottom' => 0,
+                'default_font'  => 'Tajawal',
+
+            ]);
+            $mPDF->SetDirectionality(core()->getCurrentLocale()->direction);
+            $mPDF->SetDisplayMode('fullpage');
+            $mPDF->WriteHTML($this->adjustArabicAndPersianContent($html));
+
+            return response()->streamDownload(
+                fn () => print ($mPDF->Output('', 'S')),
+                $fileName.'.pdf'
+            );
+//        }
+
+//        return PDF::loadHTML($this->adjustArabicAndPersianContent($html))
+//            ->setPaper('A4', 'portrait')
+//            ->download($fileName.'.pdf');
     }
 }
